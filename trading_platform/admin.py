@@ -8,6 +8,7 @@ from trading_platform.models import NetworkNode, Product
 @admin.register(NetworkNode)
 class NetworkNode(admin.ModelAdmin):
     readonly_fields = ('get_supplier',)
+    list_filter = ('city',)
 
     def get_supplier(self, obj):
         products = obj.products.all()
